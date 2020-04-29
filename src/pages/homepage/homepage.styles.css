@@ -1,0 +1,38 @@
+.page-wrapper{
+	height: 100%;
+	width: 100%;
+	display: flex ;
+	flex-flow: column wrap;
+/*	justify-content: center;*/
+}
+
+.main-section-wrapper{
+	height:90%;
+
+}
+
+.footer {
+	height: 10%;
+	text-align: center;
+}
+
+.header{
+	margin-bottom: 20px;
+	font-size: 20px;
+	padding: 0;
+	text-align: center;
+}
+
+
+
+.total_stats-section{
+	display: flex;
+	flex-direction: column;
+}
+.total-stats-wrapper{
+	display: grid;
+	/*align-items: center;*/
+	grid-template-columns: 32% 32% 32%;
+	text-align: center;
+}
+

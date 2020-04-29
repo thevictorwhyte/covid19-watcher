@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import Homepage from './pages/homepage/homepage.component.jsx';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      statistics:{},
+    }
+  }
 
+   componentDidMount(){
+    fetch('https://api.covid19api.com/summary')
+    .then(response => response.json())
+    .then(data => {
+      const all_data = data;
+      this.setState({statistics: all_data});
+      console.log(this.state);
+      })
+  }
+
+
+  render(){
+    const { statistics } = this.state;
+      return !Object.keys(statistics).length  ? 
+        <div> Nawa oh </div> :
+      (
+      <Homepage statistics={statistics} />
+      );  
+  }
+}
 export default App;
