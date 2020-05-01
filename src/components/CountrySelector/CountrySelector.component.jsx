@@ -1,15 +1,27 @@
 import React from 'react';
 import './CountrySelector.styles.css';
-import 'react-dropdown/style.css';
 
 
 
-const CountrySelector = (countries) => {
+const CountrySelector = ({statistics}) => {
+	const { Countries } = statistics;
 	return(
-		<div>
-			Select country
+		<div className='country-selector'>
+			<div>
+				<select>
+					{
+						Countries.map((country, i) =>(
+							<option key={i} value={country.CountryCode}>{country.Country}</option>
+						))
+					}
+				</select>
+
+				<button>See stats</button>
+
+			</div>
 		</div>
-	);
+	)
+
 }
 
 export default CountrySelector;

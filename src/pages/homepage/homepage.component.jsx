@@ -7,7 +7,7 @@ const Homepage = ({statistics}) => {
 	if(!TotalConfirmed){
 		return <div> nothing dey </div>
 	}
-	return(
+	return( 
 			<div className='page-wrapper'>
 
 				<div className='main-section-wrapper'>
@@ -17,12 +17,12 @@ const Homepage = ({statistics}) => {
 						<span>Latest </span>
 					</div>
 					<div className='country-selection'>
-						<CountrySelector />
-						<button>See stats</button>
+						<CountrySelector statistics	={statistics}/>
+						
 					</div>
 
 					<div className='total-stats-section'>
-						<h2 className='align-center'> Worldwide statistics</h2>
+						<h2 className='total-stats-header'> Worldwide statistics</h2>
 						<div className='total-stats-wrapper'>
 							<div className='new-confirmed-cases'>
 								<h3 className='total-cases'>New Confirmed Cases</h3>
@@ -51,7 +51,7 @@ const Homepage = ({statistics}) => {
 								<p>{TotalRecovered}</p>
 							</div>
 						</div>
-						
+
 					</div>
 
 				</div>
@@ -60,7 +60,6 @@ const Homepage = ({statistics}) => {
 				</div>
 			</div>
 	);
-	console.log(statistics);
 }
 
 

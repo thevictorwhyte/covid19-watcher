@@ -29,6 +29,11 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.total-stats-header {
+	text-align: center;
+}
+
 .total-stats-wrapper{
 	display: grid;
 	/*align-items: center;*/

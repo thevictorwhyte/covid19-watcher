@@ -16,7 +16,7 @@ class App extends React.Component{
     .then(data => {
       const all_data = data;
       this.setState({statistics: all_data});
-      console.log(this.state);
+      console.log(this.state.statistics);
       })
   }
 
